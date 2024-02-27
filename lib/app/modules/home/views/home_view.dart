@@ -23,7 +23,10 @@ class HomeView extends GetView<HomeController> {
               onChanged: controller.morseTextChange,
             ),
             Obx(
-              () => SelectableText(controller.morseText.value),
+              () => SelectableText(
+                controller.morseText.value,
+                style: const TextStyle(fontSize: 27),
+              ),
             ),
           ],
         ),
