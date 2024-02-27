@@ -5,10 +5,12 @@ class CustomTextField extends StatelessWidget {
     super.key,
     this.labelText = "Enter Text",
     this.controller,
+    this.onChanged,
   });
 
   final String labelText;
   final TextEditingController? controller;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +28,9 @@ class CustomTextField extends StatelessWidget {
       ),
       child: TextField(
         controller: controller,
-        decoration: const InputDecoration(
-          labelText: 'Enter text',
+        onChanged: onChanged,
+        decoration: InputDecoration(
+          labelText: labelText,
           border: InputBorder.none, // Hide TextField default border
         ),
       ),

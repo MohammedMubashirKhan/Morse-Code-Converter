@@ -14,11 +14,18 @@ class HomeView extends GetView<HomeController> {
         title: const Text('Morse Code Converter'),
         centerTitle: true,
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           children: [
-            CustomTextField(),
-            CustomTextField(),
+            CustomTextField(
+              controller: controller.morseTextController,
+              labelText: "Enter Morse Code",
+              onChanged: controller.morseTextChange,
+            ),
+            Obx(
+              () => Text(controller.morseText.value),
+            ),
+            // CustomTextField(),
           ],
         ),
       ),
