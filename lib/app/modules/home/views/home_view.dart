@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:morse_code_converter/app/modules/home/widgets/custom_text_field.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -16,10 +17,8 @@ class HomeView extends GetView<HomeController> {
       body: const Center(
         child: Column(
           children: [
-            Text(
-              'Morse Code Converter is working',
-              style: TextStyle(fontSize: 20),
-            ),
+            CustomTextField(),
+            CustomTextField(),
           ],
         ),
       ),
