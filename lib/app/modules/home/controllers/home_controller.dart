@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:morse_code_converter/app/resources/morse_resources.dart';
 
 class HomeController extends GetxController {
   TextEditingController morseTextController = TextEditingController();
@@ -15,7 +14,8 @@ class HomeController extends GetxController {
       return;
     }
 
-    morseText.value = text;
-    log("${text.isEmpty}");
+    morseText.value = MorseResources().morseToText(text);
+    morseText.value = morseText.value.capitalize!;
+    morseText.value = MorseResources().formatText(morseText.value);
   }
 }
